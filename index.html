@@ -1,74 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>About Me - Pratibha Tiwari</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pratibha Tiwari - About Me</title>
     <style>
+        :root {
+            --primary-color: #1e90ff;
+            --background-color: #fdfdfd;
+            --text-color: #333;
+            --card-bg: #ffffffcc;
+            --card-shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: sans-serif;
-            background: #f5f5f5;
-            color: #333;
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #e0f7fa, #fce4ec);
+            color: var(--text-color);
+            line-height: 1.6;
+            scroll-behavior: smooth;
         }
-        h1 {
-            color: #0066cc;
+
+        header {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: #ffffff;
+            box-shadow: 0 2px 10px var(--card-shadow);
         }
-        .section {
-            margin-bottom: 20px;
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
         }
-        a {
-            color: #0066cc;
-            text-decoration: none;
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 2rem;
         }
-        a:hover {
-            text-decoration: underline;
+
+        section {
+            margin-bottom: 3rem;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px var(--card-shadow);
         }
+
+        h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
         .skills {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
         }
+
         .skill {
-            background: #e0e0e0;
-            padding: 6px 10px;
+            position: relative;
+            background: #e3f2fd;
+            color: #0d47a1;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: help;
+            transition: transform 0.2s;
+        }
+
+        .skill:hover {
+            transform: scale(1.05);
+        }
+
+        .skill::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: #fff;
+            padding: 5px 10px;
             border-radius: 5px;
+            white-space: nowrap;
+            font-size: 0.85rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .skill:hover::after {
+            opacity: 1;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+            background: #f1f1f1;
         }
     </style>
 </head>
 <body>
-<h1>Hi, I'm Pratibha Tiwari 👩‍💻</h1>
-<div class="section">
-    <p>I’m an experienced application developer with over 6 years in the IT industry. I love building scalable and efficient web applications using modern technologies like Kotlin, Spring Boot, React, and GCP.</p>
-</div>
+<header>
+    <h1>Pratibha Tiwari</h1>
+    <p>Senior Consultant | Application Developer | GCP | Kotlin | ReactJS</p>
+</header>
+<div class="container">
+    <section>
+        <h2>About Me</h2>
+        <p>
+            I’m an experienced application developer with 6+ years in the industry. Currently working at Equal Experts,
+            I specialize in full-stack development with strong expertise in Kotlin, Spring Boot, and ReactJS. I'm passionate
+            about writing clean code, designing scalable systems, and delivering impactful software.
+        </p>
+    </section>
 
-<div class="section">
-    <strong>📍 Location:</strong> Mumbai, India<br>
-    <strong>💼 Current Role:</strong> Senior Consultant at Equal Experts<br>
-    <strong>📧 Email:</strong> <a href="mailto:ptpratibhatiwari@gmail.com">ptpratibhatiwari@gmail.com</a><br>
-    <strong>🔗 LinkedIn:</strong> <a href="https://www.linkedin.com/in/pratibha-tiwari-2740a940" target="_blank">View my profile</a><br>
-    <strong>📄 Resume:</strong> <a href="Pratibha_Resume.pdf" target="_blank">Download PDF</a>
-</div>
+    <section>
+        <h2>Resume</h2>
+        <p>
+            <a href="Pratibha_Resume.pdf" target="_blank">Download My Resume (PDF)</a>
+        </p>
+    </section>
 
-<div class="section">
-    <h2>🛠 Skills & Technologies</h2>
-    <div class="skills">
-        <div class="skill">Spring Boot</div>
-        <div class="skill">Kotlin</div>
-        <div class="skill">ReactJS</div>
-        <div class="skill">Oracle</div>
-        <div class="skill">CI/CD</div>
-        <div class="skill">GCP</div>
-        <div class="skill">Docker</div>
-        <div class="skill">Jenkins</div>
-        <div class="skill">Redux</div>
-        <div class="skill">JUnit</div>
-    </div>
-</div>
+    <section>
+        <h2>Skills</h2>
+        <div class="skills">
+            <div class="skill" data-tooltip="Expert in microservices with Spring Boot">Spring Boot</div>
+            <div class="skill" data-tooltip="Advanced Kotlin for backend services">Kotlin</div>
+            <div class="skill" data-tooltip="Strong with hooks, context API, and component design">ReactJS</div>
+            <div class="skill" data-tooltip="SQL scripting, data modeling">Oracle</div>
+            <div class="skill" data-tooltip="Jenkins, GoCD, GitLab CI/CD">CI/CD</div>
+            <div class="skill" data-tooltip="Hands-on with GCP services and infra">GCP</div>
+            <div class="skill" data-tooltip="Containerization with Docker">Docker</div>
+            <div class="skill" data-tooltip="Experience with GitHub and GitLab workflows">Git</div>
+            <div class="skill" data-tooltip="RESTful APIs and Swagger integration">API Development</div>
+            <div class="skill" data-tooltip="Data Structures & Algorithms knowledge">DSA</div>
+        </div>
+    </section>
 
-<div class="section">
-    <p>I'm passionate about clean code, scalable systems, and continuous learning. Always open to exciting opportunities and collaborations.</p>
+    <section>
+        <h2>Contact</h2>
+        <p>
+            📧 Email: <a href="mailto:ptpratibhatiwari@gmail.com">ptpratibhatiwari@gmail.com</a><br />
+            🔗 LinkedIn: <a href="https://www.linkedin.com/in/pratibha-tiwari-2740a940" target="_blank">Pratibha Tiwari</a>
+        </p>
+    </section>
 </div>
+<footer>
+    &copy; 2025 Pratibha Tiwari. All rights reserved.
+</footer>
 </body>
 </html>
