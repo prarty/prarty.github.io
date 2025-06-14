@@ -21,6 +21,24 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // Expandable testimonials functionality
+    document.querySelectorAll('.expandable-testimonial').forEach(testimonial => {
+        testimonial.addEventListener('click', function() {
+            const summary = this.querySelector('.testimonial-summary');
+            const full = this.querySelector('.testimonial-full');
+
+            if (full.style.display === 'none') {
+                summary.style.display = 'none';
+                full.style.display = 'block';
+                this.classList.add('expanded');
+            } else {
+                summary.style.display = 'block';
+                full.style.display = 'none';
+                this.classList.remove('expanded');
+            }
+        });
+    });
+
     // Back to top button functionality
     const backToTopBtn = document.querySelector('button[title="Back to Top"]');
     if (backToTopBtn) {

@@ -510,6 +510,30 @@ a:focus, button:focus, .nav-link:focus, .dark-toggle:focus {
     box-shadow: 0 6px 12px var(--shadow-light);
 }
 
+/* Expandable testimonial styling */
+.expandable-testimonial {
+    cursor: pointer;
+    position: relative;
+}
+
+.expandable-testimonial::after {
+    content: '\f078'; /* Chevron down icon */
+    font-family: 'bootstrap-icons';
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    color: var(--accent);
+    transition: transform var(--transition-speed) ease;
+}
+
+.expandable-testimonial.expanded::after {
+    transform: rotate(180deg);
+}
+
+.testimonial-summary, .testimonial-full {
+    transition: opacity var(--transition-speed) ease;
+}
+
 .testimonial-text {
     font-style: italic;
     position: relative;
