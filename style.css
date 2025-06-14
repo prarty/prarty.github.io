@@ -488,6 +488,71 @@ a:focus, button:focus, .nav-link:focus, .dark-toggle:focus {
     transform-origin: bottom left;
 }
 
+/* Testimonials section styling */
+.testimonial-card {
+    background-color: var(--secondary-bg);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px var(--shadow-light);
+    transition: transform var(--transition-speed) ease, 
+                box-shadow var(--transition-speed) ease,
+                background-color var(--transition-speed) ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    border-left: 4px solid var(--accent);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px var(--shadow-light);
+}
+
+.testimonial-text {
+    font-style: italic;
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+}
+
+.testimonial-text::before {
+    content: '"';
+    position: absolute;
+    left: 0;
+    top: -10px;
+    font-size: 2.5rem;
+    color: var(--accent);
+    opacity: 0.5;
+    font-family: Georgia, serif;
+}
+
+.testimonial-author h5 {
+    color: var(--accent);
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+}
+
+.testimonial-author p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+body.dark .testimonial-card {
+    background-color: var(--secondary-dark-bg);
+    box-shadow: 0 4px 8px var(--shadow-dark);
+}
+
+body.dark .testimonial-card:hover {
+    box-shadow: 0 6px 12px var(--shadow-dark);
+}
+
+body.dark .testimonial-text {
+    color: var(--text-dark);
+}
+
 /* Back to top button styling */
 .btn-primary {
     background-color: var(--accent);
