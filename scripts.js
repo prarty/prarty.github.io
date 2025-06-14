@@ -56,11 +56,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Dark mode toggle functionality
     const toggleBtn = document.getElementById("theme-icon");
-    if (toggleBtn) {
-        toggleBtn.addEventListener("click", toggleDarkMode);
+    const darkToggle = document.getElementById("dark-toggle");
 
-        // Check for user's preferred color scheme
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    if (toggleBtn && darkToggle) {
+        // Add event listener to the dark-toggle div
+        darkToggle.addEventListener('click', toggleDarkMode);
+
+        // Check for saved preference in localStorage
+        const savedDarkMode = localStorage.getItem('darkMode');
+
+        if (savedDarkMode === 'true') {
+            // Apply dark mode if it was saved as preference
+            document.body.classList.add('dark');
+            toggleBtn.classList.remove('bi-moon-fill');
+            toggleBtn.classList.add('bi-sun-fill');
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            // Otherwise check for user's preferred color scheme
             document.body.classList.add('dark');
             toggleBtn.classList.remove('bi-moon-fill');
             toggleBtn.classList.add('bi-sun-fill');
