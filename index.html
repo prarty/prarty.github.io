@@ -47,7 +47,7 @@
     <section id="about" class="my-5" data-aos="fade-up">
         <h2 class="section-title">About Me</h2>
         <p>
-            Experienced full-stack developer with 6+ years delivering scalable Kotlin, ReactJS, and Spring Boot solutions.
+            Experienced full-stack developer with 6+ years delivering scalable Java, Kotlin, ReactJS, and Spring Boot solutions.
             Passionate about clean code, system architecture, and cloud-native development on GCP.
         </p>
     </section>
@@ -61,14 +61,18 @@
                     <li>Led Kotlin microservices architecture on GCP.</li>
                     <li>Implemented end-to-end Spring Boot lifecycle apps.</li>
                     <li>Contributed to CI/CD pipelines and monitoring.</li>
+                    <li>Worked on migration of data from old service to new with decommissioning of old service.</li>
                 </ul>
             </div>
             <div class="timeline-entry">
                 <h5>Consultant – ThoughtWorks (Mar 2019 – Aug 2022)</h5>
                 <ul>
                     <li>Built ReactJS dashboards and data pipelines.</li>
+                    <li>Built backend services with Spring Boot (Java 11), tested using JUnit and Testcontainers.</li>
+                    <li>Implemented Okta authentication to enable secure, single sign-on (SSO) for the application.</li>
                     <li>Handled Oracle-to-MySQL migrations using ETL tools.</li>
                     <li>Worked with Formik, Redux, and RESTful APIs.</li>
+                    <li>Worked as security champion and run security analysis using STRIDE model.</li>
                 </ul>
             </div>
             <div class="timeline-entry">
@@ -85,30 +89,37 @@
     <section id="projects" class="my-5" data-aos="fade-up">
         <h2 class="section-title">Projects</h2>
         <div class="row g-4">
-            <div class="col-md-6">
-                <div class="project-card p-4 rounded shadow">
-                    <h5>Data Migration Tool</h5>
-                    <p>Kotlin-based microservice for GCP legacy migration pipelines and transformation logic.</p>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="project-card p-4 rounded shadow">
-                    <h5>React Admin Console</h5>
-                    <p>Admin UI with dynamic filters, role-based access, and full test coverage.</p>
-                </div>
-            </div>
+
             <div class="col-md-6">
                 <div class="project-card p-4 rounded shadow">
                     <h5>E-commerce Product Platform</h5>
-                    <p>Spring Boot and Oracle-powered platform for managing SKUs, attributes, and hierarchy workflows.</p>
+                    <p>Maintained a legacy backend platform for managing SKUs, product attributes, and hierarchy workflows using Java, Spring Boot. Utilized http4k, Kotlin and GCP for building lightweight, functional APIs and implemented data transformation, validation, and enrichment pipelines to deliver accurate product data to customer-facing applications.</p>
                 </div>
             </div>
+
+
+            <div class="col-md-6">
+                <div class="project-card p-4 rounded shadow">
+                    <h5>Capital Management Dashboard</h5>
+                    <p>Internal tool developed using React, Redux, and Formik for managing shares, debentures, and partner options. Backend services were implemented using Java and Spring Boot. The platform supported complex capital actions such as book value splits and included multi-level approval workflows.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="project-card p-4 rounded shadow">
+                    <h5>Banking Platform Enhancements</h5>
+                    <p>Contributed to a core banking application by enhancing modules for user and profile management. Worked on fixing session handling and improving sing-on reliability using Java and Spring MVC in a secure production environment.</p>
+                </div>
+            </div>
+
         </div>
     </section>
+
 
     <section id="skills" class="my-5" data-aos="fade-up">
         <h2 class="section-title">Skills</h2>
         <div class="d-flex flex-wrap gap-3">
+            <span class="skill-badge" data-tooltip="Java 8, Java 21">Java</span>
             <span class="skill-badge" data-tooltip="Expert in Kotlin backend architecture">Kotlin</span>
             <span class="skill-badge" data-tooltip="Advanced React apps with context and hooks">React</span>
             <span class="skill-badge" data-tooltip="Robust microservices using Spring Boot">Spring Boot</span>
