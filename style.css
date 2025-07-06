@@ -398,6 +398,13 @@ body.dark footer {
     color: var(--text-dark);
 }
 
+body.dark footer,
+body.dark footer.text-muted,
+body.dark footer small,
+body.dark footer .text-muted {
+    color: var(--text-dark) !important;
+}
+
 /* Dark mode toggle button */
 .dark-toggle {
     position: fixed;
@@ -576,8 +583,9 @@ body.dark .testimonial-author h5 {
     margin-bottom: 0;
 }
 
-body.dark .testimonial-author p {
-    color: var(--text-dark);
+body.dark .testimonial-author p,
+body.dark .testimonial-author p.text-muted {
+    color: var(--text-dark) !important;
 }
 
 body.dark .testimonial-card {
