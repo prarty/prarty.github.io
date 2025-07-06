@@ -59,23 +59,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const darkToggle = document.getElementById("dark-toggle");
 
     if (toggleBtn && darkToggle) {
-        // Add event listener to the dark-toggle div
-        darkToggle.addEventListener('click', toggleDarkMode);
+        // Always default to light mode on load
+        document.body.classList.remove('dark');
+        toggleBtn.classList.add('bi-moon-fill');
+        toggleBtn.classList.remove('bi-sun-fill');
 
-        // Check for saved preference in localStorage
-        const savedDarkMode = localStorage.getItem('darkMode');
-
-        if (savedDarkMode === 'true') {
-            // Apply dark mode if it was saved as preference
-            document.body.classList.add('dark');
-            toggleBtn.classList.remove('bi-moon-fill');
-            toggleBtn.classList.add('bi-sun-fill');
-        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            // Otherwise check for user's preferred color scheme
-            document.body.classList.add('dark');
-            toggleBtn.classList.remove('bi-moon-fill');
-            toggleBtn.classList.add('bi-sun-fill');
-        }
+        // Only toggle dark mode when user clicks
+        darkToggle.addEventListener('click', () => {
+            const isDark = document.body.classList.toggle('dark');
+            toggleBtn.classList.toggle('bi-moon-fill', !isDark);
+            toggleBtn.classList.toggle('bi-sun-fill', isDark);
+            localStorage.setItem('darkMode', isDark);
+        });
     }
 });
 
